@@ -3,7 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { GlobalContextProvider } from '@/context/state';
+import { WeatherProvider } from '@/context/state';
 import { ThemeProvider } from '@/services/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -28,7 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <GlobalContextProvider>{children}</GlobalContextProvider>
+          <WeatherProvider>{children}</WeatherProvider>
         </ThemeProvider>
       </body>
     </html>
