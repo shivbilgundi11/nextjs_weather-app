@@ -59,6 +59,7 @@ const config = {
         matteCream: '#F9AB5A',
         matteBlack: '#5F5653',
         blueGreen: '#659CB2',
+        darkVoilet: '#050b1b',
       },
       borderRadius: {
         lg: 'var(--radius)',

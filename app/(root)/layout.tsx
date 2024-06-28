@@ -10,12 +10,12 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <main className='mx-auto min-h-screen w-full p-4 py-0 sm:container'>
+      <main className='min-h-screen w-full bg-grayShade dark:bg-inherit'>
         <Navbar />
         {children}
 
         {/* -----Footer----- */}
-        <footer className='flex flex-wrap items-center justify-center border-t py-3 pb-8 sm:justify-between'>
+        <footer className='mx-auto flex flex-wrap items-center justify-center rounded-2xl border-t bg-white py-3 pb-4 sm:container dark:bg-inherit sm:justify-between'>
           <p className='flex h-full items-center justify-center gap-1 text-[16px]'>
             Made by <FooterProfile />
             <a

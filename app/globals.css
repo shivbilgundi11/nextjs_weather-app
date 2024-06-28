@@ -57,3 +57,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .temp-bg {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.051052170868347342) 0%,
+        rgba(0, 0, 0, 0.05052170868347342) 100%
+      ),
+      url(../public/assets/8436207.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

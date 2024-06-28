@@ -9,7 +9,7 @@ import { Button } from './ui/button';
 export default function Navbar() {
   return (
     <>
-      <header className='h-16 border-b md:h-20'>
+      <header className='mx-auto h-16 rounded-2xl border-b bg-white sm:container dark:bg-inherit md:h-20'>
         <nav className='flex h-full items-center justify-between gap-2 md:gap-4'>
           {/* <-----------Logo-With-Site-Name-----------> */}
           <div className='flex items-center justify-center gap-2 md:gap-5'>

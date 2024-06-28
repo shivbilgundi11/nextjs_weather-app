@@ -13,6 +13,10 @@ interface WeatherContextType {
   // airPollution: object | null;
   // eslint-disable-next-line no-unused-vars
   fetchWeatherData: (city: string) => void;
+  unit: 'metric' | 'imperial';
+
+  // eslint-disable-next-line no-unused-vars
+  setUnit: (unit: 'metric' | 'imperial') => void;
 }
 
 const WeatherContext = createContext<WeatherContextType | undefined>(undefined);
@@ -21,6 +25,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   const [currentWeather, setCurrentWeather] = useState<WeatherData | null>(
     null,
   );
+  const [unit, setUnit] = useState<'metric' | 'imperial'>('metric');
   // const [forecast, setForecast] = useState<object | null>(null);
   // const [airPollution, setAirPollution] = useState<object | null>(null);
 
@@ -28,7 +33,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
     try {
       const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
       const geoRes = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`,
+        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}&units=${unit}`,
       );
       if (!geoRes.ok) {
         throw new Error('Failed to fetch geolocation data');
@@ -37,7 +42,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
       const { lat, lon } = geoData[0];
 
       const weatherRes = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`,
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`,
       );
       if (!weatherRes.ok) {
         throw new Error('Failed to fetch weather data');
@@ -69,7 +74,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <WeatherContext.Provider
-      value={{ currentWeather, fetchWeatherData }}
+      value={{ currentWeather, fetchWeatherData, setUnit, unit }}
       // value={{ currentWeather, forecast, airPollution, fetchWeatherData }}
     >
       {children}
