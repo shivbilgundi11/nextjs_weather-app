@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { SelectUnit } from '@/components/select-unit';
+import { Skeleton } from '@/components/ui/skeleton';
 import TemperatureBox from '@/components/ui-sections/temperature-box';
 import TodaysWeather from '@/components/ui-sections/todaysWeather';
 import WeeksWeather from '@/components/ui-sections/weeksWeather';
@@ -21,31 +22,35 @@ export default function Page() {
         <div className='flex h-full w-full flex-col gap-y-3 rounded-xl md:col-span-3 md:gap-y-5 xl:col-span-4'>
           <TemperatureBox forecast={forecast} unit={unit} />
 
-          <section className='h-auto w-full rounded-2xl p-2 md:p-6 lg:py-10'>
-            {/* -----Tabs-Button----- */}
-            <div className='flex flex-col gap-y-4 md:gap-y-6'>
-              <div className='flex items-center gap-x-4'>
-                <button
-                  className={`w-max border-b-2 text-lg font-semibold ${tabs === 'Today' ? 'border-gray-700' : 'border-transparent text-gray-400'}`}
-                  onClick={() => setTabs('Today')}
-                >
-                  Today
-                </button>
-                <button
-                  className={`w-max border-b-2 text-lg font-semibold ${tabs === 'Week' ? 'border-gray-700' : 'border-transparent text-gray-400'}`}
-                  onClick={() => setTabs('Week')}
-                >
-                  Week
-                </button>
-              </div>
+          {forecast === null ? (
+            <Skeleton className='w-full h-[300px]' />
+          ) : (
+            <section className='h-auto w-full rounded-2xl p-2 md:p-6 lg:py-10'>
+              {/* -----Tabs-Button----- */}
+              <div className='flex flex-col gap-y-4 md:gap-y-6'>
+                <div className='flex items-center gap-x-4'>
+                  <button
+                    className={`w-max border-b-2 text-lg font-semibold ${tabs === 'Today' ? 'border-gray-700' : 'border-transparent text-gray-400'}`}
+                    onClick={() => setTabs('Today')}
+                  >
+                    Today
+                  </button>
+                  <button
+                    className={`w-max border-b-2 text-lg font-semibold ${tabs === 'Week' ? 'border-gray-700' : 'border-transparent text-gray-400'}`}
+                    onClick={() => setTabs('Week')}
+                  >
+                    Week
+                  </button>
+                </div>
 
-              {tabs === 'Today' ? (
-                <TodaysWeather forecast={forecast} unit={unit} />
-              ) : (
-                <WeeksWeather />
-              )}
-            </div>
-          </section>
+                {tabs === 'Today' ? (
+                  <TodaysWeather forecast={forecast} unit={unit} />
+                ) : (
+                  <WeeksWeather />
+                )}
+              </div>
+            </section>
+          )}
         </div>
 
         {/* -----Right-Column----- */}

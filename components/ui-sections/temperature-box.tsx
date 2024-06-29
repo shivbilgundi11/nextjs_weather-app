@@ -1,3 +1,4 @@
+import { Skeleton } from '../ui/skeleton';
 import WeatherIcon from '../weatherIcon';
 
 interface DataType {
@@ -26,7 +27,7 @@ interface Forecast {
 
 export default function TemperatureBox({ forecast, unit }: Forecast) {
   if (!forecast) {
-    return <div>Loading...</div>;
+    return <Skeleton className='w-full h-[350px]' />;
   }
 
   return (
