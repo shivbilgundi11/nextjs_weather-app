@@ -1,20 +1,6 @@
-'use client';
-
-import { useEffect } from 'react';
-
 import { SelectUnit } from '@/components/select-unit';
-import { useWeather } from '@/context/state';
 
 export default function Page() {
-  const { currentWeather, fetchWeatherData, unit } = useWeather();
-
-  console.log(currentWeather);
-
-  useEffect(() => {
-    fetchWeatherData('Bengaluru');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [unit]);
-
   return (
     <>
       <div className='w-full h-auto sm:container mx-auto mt-3 flex items-center justify-end'>

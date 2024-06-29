@@ -11,11 +11,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { useWeather } from '@/context/state';
+import { useWeatherContext } from '@/context/state';
 
 export function SelectUnit() {
-  const { unit, setUnit } = useWeather();
-  console.log(unit);
+  const { setUnit } = useWeatherContext();
   return (
     <Select
       defaultValue='metric'
