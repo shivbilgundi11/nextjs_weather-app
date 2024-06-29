@@ -1,33 +1,16 @@
+import { WeatherDataType } from '@/lib/types';
+
 import { Skeleton } from '../ui/skeleton';
 import WeatherIcon from '../weatherIcon';
 
-interface DataType {
-  weather: {
-    id: number;
-    main: string;
-    description: string;
-    icon: string;
-  }[];
-  main: {
-    temp: number;
-    temp_min: number;
-    temp_max: number;
-  };
-  dt: number;
-  sys: {
-    country: string;
-  };
-  name: string;
-}
-
 interface Forecast {
-  forecast: DataType | null;
+  forecast: WeatherDataType | null;
   unit: 'metric' | 'imperial';
 }
 
 export default function TemperatureBox({ forecast, unit }: Forecast) {
   if (!forecast) {
-    return <Skeleton className='w-full h-[350px]' />;
+    return <Skeleton className='h-[350px] w-full' />;
   }
 
   return (

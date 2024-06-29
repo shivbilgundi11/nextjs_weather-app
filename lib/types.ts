@@ -70,3 +70,7 @@ export interface WeatherContextType {
   forecast: WeatherDataType | null;
   airPollution: AirPollutionDataType | null;
 }
+
+export interface SunDataProps {
+  sunData: WeatherDataType | null;
+}

@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { SelectUnit } from '@/components/select-unit';
 import { Skeleton } from '@/components/ui/skeleton';
+import SunRiseSet from '@/components/ui-sections/sunRiseSet';
 import TemperatureBox from '@/components/ui-sections/temperature-box';
 import TodaysWeather from '@/components/ui-sections/todaysWeather';
 import WeeksWeather from '@/components/ui-sections/weeksWeather';
@@ -23,7 +24,7 @@ export default function Page() {
           <TemperatureBox forecast={forecast} unit={unit} />
 
           {forecast === null ? (
-            <Skeleton className='w-full h-[300px]' />
+            <Skeleton className='h-[300px] w-full' />
           ) : (
             <section className='h-auto w-full rounded-2xl p-2 md:p-6 lg:py-10'>
               {/* -----Tabs-Button----- */}
@@ -54,7 +55,13 @@ export default function Page() {
         </div>
 
         {/* -----Right-Column----- */}
-        <div className='h-[400px] w-full rounded-xl bg-white dark:bg-darkVoilet md:col-span-2 xl:col-span-2'></div>
+        <div className='h-[400px] w-full rounded-xl p-3 md:col-span-2 md:p-4 lg:p-5 lg:pt-2 xl:col-span-2'>
+          <h2 className='text-center text-lg font-bold text-slate-800 dark:text-white md:text-xl lg:text-2xl'>
+            Today&apos;s Highlight
+          </h2>
+
+          <SunRiseSet sunData={forecast?.sys} />
+        </div>
       </div>
     </>
   );
