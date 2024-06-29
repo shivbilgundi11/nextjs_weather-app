@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { SelectUnit } from '@/components/select-unit';
 import { Skeleton } from '@/components/ui/skeleton';
+import AirQuality from '@/components/ui-sections/airQuality';
 import SunRiseSet from '@/components/ui-sections/sunRiseSet';
 import TemperatureBox from '@/components/ui-sections/temperature-box';
 import TodaysWeather from '@/components/ui-sections/todaysWeather';
@@ -11,7 +12,7 @@ import WeeksWeather from '@/components/ui-sections/weeksWeather';
 import { useWeatherContext } from '@/context/state';
 
 export default function Page() {
-  const { forecast, unit } = useWeatherContext();
+  const { forecast, unit, airPollution } = useWeatherContext();
   const [tabs, setTabs] = useState<'Today' | 'Week'>('Today');
   return (
     <>
@@ -56,11 +57,15 @@ export default function Page() {
 
         {/* -----Right-Column----- */}
         <div className='h-[400px] w-full rounded-xl p-3 md:col-span-2 md:p-4 lg:p-5 lg:pt-2 xl:col-span-2'>
-          <h2 className='text-center text-lg font-bold text-slate-800 dark:text-white md:text-xl lg:text-2xl'>
+          <h2 className='mb-5 text-center text-xl font-bold text-slate-800 dark:text-white md:text-xl lg:text-2xl'>
             Today&apos;s Highlight
           </h2>
 
-          <SunRiseSet sunData={forecast?.sys} />
+          <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-1 md:gap-5'>
+            <SunRiseSet sunData={forecast?.sys} />
+
+            <AirQuality airPollution={airPollution} />
+          </div>
         </div>
       </div>
     </>

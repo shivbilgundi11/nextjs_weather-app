@@ -18,7 +18,7 @@ export interface SunDataProps {
 export default function SunRiseSet({ sunData }: SunDataProps) {
   return (
     <>
-      <div className='relative mt-4 flex h-28 w-max flex-col justify-between overflow-hidden rounded-2xl border bg-gray-200 p-3 dark:bg-darkVoilet md:w-full'>
+      <div className='relative flex h-28 w-full flex-col justify-between overflow-hidden rounded-2xl border bg-gray-200 p-3 dark:bg-darkVoilet md:w-full'>
         <h3 className='font-semibold lg:ml-2 lg:text-lg'>Sunrise & Sunset</h3>
         <span className='absolute -right-9 -top-9 text-8xl text-gray-300 dark:text-gray-600'>
           <GoSun />
