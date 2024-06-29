@@ -9,18 +9,60 @@ import {
   useState,
 } from 'react';
 
+interface DataType {
+  coord: {
+    lon: number;
+    lat: number;
+  };
+  weather: {
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
+  }[];
+  base: string;
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    pressure: number;
+    humidity: number;
+  };
+  visibility: number;
+  wind: {
+    speed: number;
+    deg: number;
+  };
+  clouds: {
+    all: number;
+  };
+  dt: number;
+  sys: {
+    type: number;
+    id: number;
+    country: string;
+    sunrise: number;
+    sunset: number;
+  };
+  timezone: number;
+  id: number;
+  name: string;
+  cod: number;
+}
+
 interface WeatherContextType {
   unit: 'metric' | 'imperial';
   // eslint-disable-next-line no-unused-vars
   setUnit: (unit: 'metric' | 'imperial') => void;
-  forecast: object | null;
+  forecast: DataType | null;
 }
 
 const WeatherContext = createContext<WeatherContextType | undefined>(undefined);
 
 export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   const [unit, setUnit] = useState<'metric' | 'imperial'>('metric');
-  const [forecast, setForecast] = useState(null);
+  const [forecast, setForecast] = useState<DataType | null>(null);
 
   const fetchForecast = async () => {
     try {
@@ -35,7 +77,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     fetchForecast();
-  }, [unit]);
+  }, []);
 
   return (
     <WeatherContext.Provider value={{ setUnit, unit, forecast }}>

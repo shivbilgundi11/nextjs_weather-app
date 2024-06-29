@@ -63,10 +63,10 @@
     background: rgb(0, 0, 0);
     background: linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.051052170868347342) 0%,
-        rgba(0, 0, 0, 0.05052170868347342) 100%
+        rgba(0, 0, 0, 0.291052170868347342) 0%,
+        rgba(0, 0, 0, 0.29052170868347342) 100%
       ),
-      url(../public/assets/8436207.jpg);
+      url(../public/assets/6452058.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

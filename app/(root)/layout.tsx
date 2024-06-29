@@ -31,9 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
             Weather data provided by OpenWeather{' '}
             <a href='https://openweathermap.org/' target='_blank'>
               <Image
-                src={
-                  'https://private-user-images.githubusercontent.com/101513013/343707037-e157a43c-e062-457a-887a-fb4a0c1022f5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTk0Nzk1ODUsIm5iZiI6MTcxOTQ3OTI4NSwicGF0aCI6Ii8xMDE1MTMwMTMvMzQzNzA3MDM3LWUxNTdhNDNjLWUwNjItNDU3YS04ODdhLWZiNGEwYzEwMjJmNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNjI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDYyN1QwOTA4MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNTMyZTM3MThiOTgzODQyMGIzYTQzZTU0OTFkNGZmNzNlYzkzZDI5MDVlMmZmNjQ5ZDgwZGVmMGFjYzY4NzMzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.r0BGTRaduyGlGSBoCPogyOownbGsxypCoDPuU-9_JIs'
-                }
+                src={'/assets/OpenWeather-Logo.png'}
                 alt='OpenWeather-logo'
                 width={64}
                 height={64}
