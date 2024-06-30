@@ -9,6 +9,7 @@ import SunRiseSet from '@/components/ui-sections/sunRiseSet';
 import TemperatureBox from '@/components/ui-sections/temperature-box';
 import TodaysWeather from '@/components/ui-sections/todaysWeather';
 import WeeksWeather from '@/components/ui-sections/weeksWeather';
+import WindSpeed from '@/components/ui-sections/wind';
 import { useWeatherContext } from '@/context/state';
 
 export default function Page() {
@@ -19,9 +20,9 @@ export default function Page() {
       <div className='mx-auto mt-3 flex h-auto w-full items-center justify-end sm:container'>
         <SelectUnit />
       </div>
-      <div className='mx-auto grid min-h-[80vh] w-full grid-cols-1 gap-3 bg-grayShade p-3 sm:container dark:bg-inherit sm:p-4 md:grid-cols-5 md:gap-5 md:py-5 xl:grid-cols-6'>
+      <div className='mx-auto grid h-auto w-full grid-cols-1 gap-3 bg-grayShade p-3 sm:container dark:bg-inherit sm:p-4 md:grid-cols-1 md:gap-5 md:py-5 lg:grid-cols-5 xl:grid-cols-6'>
         {/* -----Left-Column----- */}
-        <div className='flex h-full w-full flex-col gap-y-3 rounded-xl md:col-span-3 md:gap-y-5 xl:col-span-4'>
+        <div className='flex h-full w-full flex-col gap-y-3 rounded-xl md:gap-y-5 lg:col-span-3 xl:col-span-4'>
           <TemperatureBox forecast={forecast} unit={unit} />
 
           {forecast === null ? (
@@ -56,15 +57,17 @@ export default function Page() {
         </div>
 
         {/* -----Right-Column----- */}
-        <div className='h-[400px] w-full rounded-xl p-3 md:col-span-2 md:p-4 lg:p-5 lg:pt-2 xl:col-span-2'>
+        <div className='h-auto w-full rounded-xl p-3 md:p-4 lg:col-span-2 lg:p-5 lg:pt-2 xl:col-span-2'>
           <h2 className='mb-5 text-center text-xl font-bold text-slate-800 dark:text-white md:text-xl lg:text-2xl'>
             Today&apos;s Highlight
           </h2>
 
-          <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-1 md:gap-5'>
+          <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-5 lg:grid-cols-1'>
             <SunRiseSet sunData={forecast?.sys} />
 
             <AirQuality airPollution={airPollution} />
+
+            <WindSpeed windData={forecast?.wind} />
           </div>
         </div>
       </div>

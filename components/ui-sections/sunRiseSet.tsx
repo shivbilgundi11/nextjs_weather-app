@@ -19,7 +19,7 @@ export interface SunDataProps {
 
 export default function SunRiseSet({ sunData }: SunDataProps) {
   if (!sunData) {
-    return <Skeleton className='w-full h-28' />;
+    return <Skeleton className='h-28 w-full' />;
   }
   return (
     <>
@@ -30,7 +30,7 @@ export default function SunRiseSet({ sunData }: SunDataProps) {
         </span>
         {sunData ? (
           <div className='flex items-center gap-x-2 lg:gap-x-8'>
-            <div className='flex items-center gap-x-2 lg:gap-x-4'>
+            <div className='mr-2 flex items-center gap-x-2 lg:gap-x-4'>
               <span className='inline-flex h-11 w-11 items-center justify-center rounded-full border border-orange-300 bg-yellow-400 text-xl font-semibold text-white'>
                 <IoArrowUpOutline />
               </span>{' '}

@@ -29,7 +29,7 @@ export default function AirQuality({ airPollution }: AirPollutionProps) {
   const aqi = airPollution?.list[0]?.main?.aqi as 1 | 2 | 3 | 4 | 5;
 
   if (!airPollution) {
-    return <Skeleton className='w-full h-28' />;
+    return <Skeleton className='h-28 w-full' />;
   }
 
   return (
@@ -55,7 +55,7 @@ export default function AirQuality({ airPollution }: AirPollutionProps) {
             </span>
             <span className='inline-flex items-center font-semibold'>
               O3:{' '}
-              <p className='ml-1 font-medium text-sm'>
+              <p className='ml-1 text-sm font-medium'>
                 {airPollution?.list[0]?.components?.o3}
               </p>{' '}
               <small className='ml-1'>

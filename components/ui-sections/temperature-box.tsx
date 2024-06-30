@@ -26,7 +26,7 @@ export default function TemperatureBox({ forecast, unit }: Forecast) {
         </div>
         <div className='self-center'>
           {unit === 'metric' ? (
-            <p className='text-4xl font-semibold md:text-5xl lg:text-6xl'>
+            <p className='text-5xl font-semibold md:text-5xl lg:text-6xl'>
               {forecast?.main?.temp.toFixed(1)}{' '}
               <small className='font-light'>° C</small>
             </p>

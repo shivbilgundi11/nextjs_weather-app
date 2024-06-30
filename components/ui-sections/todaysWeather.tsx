@@ -54,7 +54,7 @@ export default function TodaysWeather({ forecast }: TodaysProps) {
       <section className='h-auto w-full rounded-2xl'>
         <div className='flex flex-wrap gap-2 md:gap-3'>
           {/* Humidity */}
-          <div className='rounded-2xl border bg-white p-2 dark:bg-darkVoilet md:p-4'>
+          <div className='rounded-2xl border bg-white p-4 dark:bg-darkVoilet md:p-5'>
             <div className='flex items-center gap-x-2 md:gap-x-3'>
               <IconComp path={'/assets/humidity1.png'} />
               <p className='text-sm font-semibold tracking-wide text-gray-700 dark:text-white md:text-base'>
@@ -67,7 +67,7 @@ export default function TodaysWeather({ forecast }: TodaysProps) {
           </div>
 
           {/* Feels-Like */}
-          <div className='rounded-2xl border bg-white p-2 dark:bg-darkVoilet md:p-4'>
+          <div className='rounded-2xl border bg-white p-4 dark:bg-darkVoilet md:p-5'>
             <div className='flex items-center gap-x-2 md:gap-x-3'>
               <IconComp path={'/assets/temperature1.png'} />
               <p className='text-sm font-semibold tracking-wide text-gray-700 dark:text-white md:text-base'>
@@ -83,7 +83,7 @@ export default function TodaysWeather({ forecast }: TodaysProps) {
           </div>
 
           {/* Visibility */}
-          <div className='rounded-2xl border bg-white p-2 dark:bg-darkVoilet md:p-4'>
+          <div className='rounded-2xl border bg-white p-4 dark:bg-darkVoilet md:p-5'>
             <div className='flex items-center gap-x-2 md:gap-x-3'>
               <IconComp path={'/assets/visibility1.png'} />
               <p className='text-sm font-semibold tracking-wide text-gray-700 dark:text-white md:text-base'>
@@ -96,7 +96,7 @@ export default function TodaysWeather({ forecast }: TodaysProps) {
           </div>
 
           {/* Pressure */}
-          <div className='rounded-2xl border bg-white p-2 dark:bg-darkVoilet md:p-4'>
+          <div className='rounded-2xl border bg-white p-4 dark:bg-darkVoilet md:p-5'>
             <div className='flex items-center gap-x-2 md:gap-x-3'>
               <IconComp path={'/assets/pressure.png'} />
               <p className='text-sm font-semibold tracking-wide text-gray-700 dark:text-white md:text-base'>
@@ -110,7 +110,7 @@ export default function TodaysWeather({ forecast }: TodaysProps) {
           </div>
 
           {/* Min-Temp */}
-          <div className='rounded-2xl border bg-white p-2 dark:bg-darkVoilet md:p-4'>
+          <div className='rounded-2xl border bg-white p-4 dark:bg-darkVoilet md:p-5'>
             <div className='flex items-center gap-x-2 md:gap-x-3'>
               <IconComp path={'/assets/min-temperature.png'} />
               <p className='text-sm font-semibold tracking-wide text-gray-700 dark:text-white md:text-base'>
@@ -126,7 +126,7 @@ export default function TodaysWeather({ forecast }: TodaysProps) {
           </div>
 
           {/* Max-Temp */}
-          <div className='rounded-2xl border bg-white p-2 dark:bg-darkVoilet md:p-4'>
+          <div className='rounded-2xl border bg-white p-4 dark:bg-darkVoilet md:p-5'>
             <div className='flex items-center gap-x-2 md:gap-x-3'>
               <IconComp path={'/assets/max-temperature.png'} />
               <p className='text-sm font-semibold tracking-wide text-gray-700 dark:text-white md:text-base'>
