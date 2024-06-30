@@ -44,7 +44,7 @@ interface DataType {
 
 interface TodaysProps {
   forecast: DataType | null;
-  unit: 'metric' | 'imperial';
+  unit: string;
 }
 
 export default function TodaysWeather({ forecast }: TodaysProps) {

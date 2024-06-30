@@ -6,7 +6,7 @@ import NextDayCard from '../nextDayWeatherCard';
 
 interface WeeksWeatherProps {
   fiveday: FiveDayForecast | null;
-  unit: 'metric' | 'imperial';
+  unit: string;
 }
 
 export default function WeeksWeather({ fiveday, unit }: WeeksWeatherProps) {

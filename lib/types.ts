@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+
 export interface WeatherDataType {
   coord: {
     lon: number;
@@ -63,13 +65,25 @@ export interface AirPollutionDataType {
   }>;
 }
 
+export interface GeoCodedList {
+  name: string;
+  country: string;
+  state: string;
+  lat: number;
+  lon: number;
+}
+
 export interface WeatherContextType {
-  unit: 'metric' | 'imperial';
+  unit: string;
   // eslint-disable-next-line no-unused-vars
-  setUnit: (unit: 'metric' | 'imperial') => void;
+  setUnit: (unit: string) => void;
   forecast: WeatherDataType | null;
   airPollution: AirPollutionDataType | null;
   fiveDayForecast: FiveDayForecast | null;
+  geoCodedList: GeoCodedList[];
+  searchValue: string;
+  // eslint-disable-next-line no-unused-vars
+  handleInput: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface SunDataProps {

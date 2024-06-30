@@ -11,12 +11,15 @@ import {
   CommandItem,
   CommandList,
 } from '@/components/ui/command';
+import { useWeatherContext } from '@/context/state';
 
 import { Button } from './ui/button';
 import { DialogTitle } from './ui/dialog';
 
 export function SearchCommand() {
   const [open, setOpen] = React.useState(false);
+
+  const { geoCodedList, handleInput } = useWeatherContext();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -43,13 +46,23 @@ export function SearchCommand() {
       {/* <p className='text-sm text-muted-foreground'>Press </p> */}
       <CommandDialog open={open} onOpenChange={setOpen}>
         <DialogTitle className='hidden'>Weather in your city</DialogTitle>
-        <CommandInput placeholder='Type a command or search...' />
+        <CommandInput
+          placeholder='Weather in your city...'
+          onChangeCapture={handleInput}
+        />
         <CommandList aria-describedby='search-results-list'>
           <CommandEmpty>No Suggestions.</CommandEmpty>
           <CommandGroup heading='Suggestions'>
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
+            {geoCodedList.length === 0 && <p>No Results</p>}
+
+            {geoCodedList.map((item) => {
+              const { country, state, name } = item;
+              return (
+                <CommandItem key={item.lat}>
+                  {name}, {state}, {country}
+                </CommandItem>
+              );
+            })}
           </CommandGroup>
         </CommandList>
       </CommandDialog>

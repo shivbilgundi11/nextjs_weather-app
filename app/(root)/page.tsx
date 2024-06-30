@@ -15,6 +15,7 @@ import { useWeatherContext } from '@/context/state';
 export default function Page() {
   const { forecast, unit, airPollution, fiveDayForecast } = useWeatherContext();
   const [tabs, setTabs] = useState<'Today' | 'Week'>('Today');
+
   return (
     <>
       <div className='mx-auto mt-3 flex h-auto w-full items-center justify-end sm:container'>

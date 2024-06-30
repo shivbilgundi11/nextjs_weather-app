@@ -18,7 +18,7 @@ export function SelectUnit() {
   return (
     <Select
       defaultValue='metric'
-      onValueChange={(value: 'metric' | 'imperial') => setUnit(value)}
+      onValueChange={(value: string) => setUnit(value)}
     >
       <SelectTrigger className='w-[180px]'>
         <SelectValue placeholder='Select a unit' />

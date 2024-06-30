@@ -10,7 +10,7 @@ interface Wind {
 
 interface WindSpeedProps {
   windData: Wind | undefined;
-  unit: 'metric' | 'imperial';
+  unit: string;
 }
 
 export default function WindSpeed({ windData, unit }: WindSpeedProps) {

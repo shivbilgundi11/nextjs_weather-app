@@ -5,7 +5,7 @@ import WeatherIcon from '../weatherIcon';
 
 interface Forecast {
   forecast: WeatherDataType | null;
-  unit: 'metric' | 'imperial';
+  unit: string;
 }
 
 export default function TemperatureBox({ forecast, unit }: Forecast) {
@@ -31,7 +31,7 @@ export default function TemperatureBox({ forecast, unit }: Forecast) {
               <small className='font-light'>° C</small>
             </p>
           ) : (
-            <p className='text-xl font-semibold md:text-3xl lg:text-5xl'>
+            <p className='text-5xl font-semibold md:text-5xl lg:text-6xl'>
               {forecast?.main?.temp.toFixed(1)}{' '}
               <small className='font-light'>° F</small>
             </p>

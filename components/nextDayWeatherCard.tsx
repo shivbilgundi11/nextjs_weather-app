@@ -38,7 +38,7 @@ export default function NextDayCard({
   unit,
 }: {
   cardData: ForecastItem;
-  unit: 'metric' | 'imperial';
+  unit: string;
 }) {
   return (
     <>
