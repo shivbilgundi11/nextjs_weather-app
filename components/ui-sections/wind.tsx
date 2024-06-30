@@ -10,9 +10,10 @@ interface Wind {
 
 interface WindSpeedProps {
   windData: Wind | undefined;
+  unit: 'metric' | 'imperial';
 }
 
-export default function WindSpeed({ windData }: WindSpeedProps) {
+export default function WindSpeed({ windData, unit }: WindSpeedProps) {
   if (!windData) {
     return <Skeleton className='h-56 w-full' />;
   }
@@ -45,7 +46,8 @@ export default function WindSpeed({ windData }: WindSpeedProps) {
             />
           </div>
           <p className='absolute left-1/2 top-1/2 ml-[2px] translate-x-[-50%] translate-y-[-50%] font-medium'>
-            {Math.round(windData?.speed as number)} <small>m/s</small>
+            {Math.round(windData?.speed as number)}{' '}
+            <small>{unit === 'metric' ? 'm/s' : 'mh'}</small>
           </p>
         </div>
       </div>

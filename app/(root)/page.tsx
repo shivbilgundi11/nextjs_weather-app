@@ -13,7 +13,7 @@ import WindSpeed from '@/components/ui-sections/wind';
 import { useWeatherContext } from '@/context/state';
 
 export default function Page() {
-  const { forecast, unit, airPollution } = useWeatherContext();
+  const { forecast, unit, airPollution, fiveDayForecast } = useWeatherContext();
   const [tabs, setTabs] = useState<'Today' | 'Week'>('Today');
   return (
     <>
@@ -49,7 +49,7 @@ export default function Page() {
                 {tabs === 'Today' ? (
                   <TodaysWeather forecast={forecast} unit={unit} />
                 ) : (
-                  <WeeksWeather />
+                  <WeeksWeather fiveday={fiveDayForecast} unit={unit} />
                 )}
               </div>
             </section>
@@ -58,7 +58,7 @@ export default function Page() {
 
         {/* -----Right-Column----- */}
         <div className='h-auto w-full rounded-xl p-3 md:p-4 lg:col-span-2 lg:p-5 lg:pt-2 xl:col-span-2'>
-          <h2 className='mb-5 text-center text-xl font-bold text-slate-800 dark:text-white md:text-xl lg:text-2xl'>
+          <h2 className='mb-5 rounded-2xl border p-2 text-center text-xl font-bold text-slate-800 dark:text-white md:text-xl'>
             Today&apos;s Highlight
           </h2>
 
@@ -67,7 +67,7 @@ export default function Page() {
 
             <AirQuality airPollution={airPollution} />
 
-            <WindSpeed windData={forecast?.wind} />
+            <WindSpeed windData={forecast?.wind} unit={unit} />
           </div>
         </div>
       </div>

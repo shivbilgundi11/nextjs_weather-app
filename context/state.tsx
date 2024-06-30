@@ -48,7 +48,6 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   const fetchFiveDayForecast = async () => {
     try {
       const res = await axios.get(`api/fiveday`);
-      console.log(res.data);
 
       setFiveDayForecast(res.data);
     } catch (error: unknown) {
