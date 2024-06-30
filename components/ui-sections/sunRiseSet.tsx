@@ -3,6 +3,8 @@ import { GoSun } from 'react-icons/go';
 import { IoArrowUpOutline } from 'react-icons/io5';
 import { MdArrowDownward } from 'react-icons/md';
 
+import { Skeleton } from '../ui/skeleton';
+
 type Sun = {
   type: number;
   id: number;
@@ -16,6 +18,9 @@ export interface SunDataProps {
 }
 
 export default function SunRiseSet({ sunData }: SunDataProps) {
+  if (!sunData) {
+    return <Skeleton className='w-full h-28' />;
+  }
   return (
     <>
       <div className='relative flex h-28 w-full flex-col justify-between overflow-hidden rounded-2xl border bg-gray-200 p-3 dark:bg-darkVoilet md:w-full'>

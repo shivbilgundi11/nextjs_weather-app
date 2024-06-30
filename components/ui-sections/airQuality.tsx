@@ -2,6 +2,8 @@ import { PiWind } from 'react-icons/pi';
 
 import { AirPollutionDataType } from '@/lib/types';
 
+import { Skeleton } from '../ui/skeleton';
+
 interface AirPollutionProps {
   airPollution: AirPollutionDataType | null;
 }
@@ -20,11 +22,15 @@ export default function AirQuality({ airPollution }: AirPollutionProps) {
       case 5:
         return 'Very Poor';
       default:
-        return 'Unknown'; // Handle unexpected values gracefully
+        return 'Unknown';
     }
   }
 
   const aqi = airPollution?.list[0]?.main?.aqi as 1 | 2 | 3 | 4 | 5;
+
+  if (!airPollution) {
+    return <Skeleton className='w-full h-28' />;
+  }
 
   return (
     <>
@@ -43,16 +49,16 @@ export default function AirQuality({ airPollution }: AirPollutionProps) {
               <p className='ml-1 font-medium'>
                 {airPollution?.list[0]?.components?.pm2_5}
               </p>{' '}
-              <small>
+              <small className='ml-1'>
                 μg/m<sup>3</sup>
               </small>
             </span>
             <span className='inline-flex items-center font-semibold'>
               O3:{' '}
-              <p className='ml-1 font-medium'>
+              <p className='ml-1 font-medium text-sm'>
                 {airPollution?.list[0]?.components?.o3}
               </p>{' '}
-              <small>
+              <small className='ml-1'>
                 μg/m<sup>3</sup>
               </small>
             </span>
