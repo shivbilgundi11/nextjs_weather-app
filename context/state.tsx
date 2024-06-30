@@ -11,6 +11,7 @@ import {
 
 import {
   AirPollutionDataType,
+  FiveDayForecast,
   WeatherContextType,
   WeatherDataType,
 } from '@/lib/types';
@@ -23,6 +24,8 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   const [airPollution, setAirPollution] = useState<AirPollutionDataType | null>(
     null,
   );
+  const [fiveDayForecast, setFiveDayForecast] =
+    useState<FiveDayForecast | null>(null);
 
   const fetchForecast = async () => {
     try {
@@ -36,9 +39,18 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   const fetchAirPollution = async () => {
     try {
       const res = await axios.get(`api/pollution`);
-      console.log(res.data);
 
       setAirPollution(res.data);
+    } catch (error: unknown) {
+      console.log('Error fetching forecast data');
+    }
+  };
+  const fetchFiveDayForecast = async () => {
+    try {
+      const res = await axios.get(`api/fiveday`);
+      console.log(res.data);
+
+      setFiveDayForecast(res.data);
     } catch (error: unknown) {
       console.log('Error fetching forecast data');
     }
@@ -47,10 +59,13 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     fetchForecast();
     fetchAirPollution();
+    fetchFiveDayForecast();
   }, []);
 
   return (
-    <WeatherContext.Provider value={{ setUnit, unit, forecast, airPollution }}>
+    <WeatherContext.Provider
+      value={{ setUnit, unit, forecast, airPollution, fiveDayForecast }}
+    >
       {children}
     </WeatherContext.Provider>
   );
