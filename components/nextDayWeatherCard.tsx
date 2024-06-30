@@ -42,10 +42,10 @@ export default function NextDayCard({
 }) {
   return (
     <>
-      <div className='flex flex-col gap-y-2 rounded-2xl border bg-white p-3 dark:bg-darkVoilet md:gap-y-3 md:p-4'>
-        <div className='flex gap-x-5 lg:gap-x-12'>
+      <div className='flex flex-col gap-y-2 rounded-2xl border bg-white p-2 dark:bg-darkVoilet md:gap-y-3 md:p-4'>
+        <div className='flex gap-x-3 lg:gap-x-12'>
           <div className='flex flex-col items-start'>
-            <p className='text-lg font-semibold tracking-wide'>
+            <p className='font-semibold tracking-wide md:text-lg'>
               {moment.unix(cardData?.dt).format('dddd')}
             </p>
             <p className='text-sm font-medium tracking-wide text-gray-600 dark:text-gray-400'>
@@ -56,7 +56,7 @@ export default function NextDayCard({
           <WeatherIcon id={cardData?.weather[0]?.icon} />
         </div>
 
-        <div className='flex justify-between gap-x-5 lg:gap-x-8'>
+        <div className='flex justify-between gap-x-3 lg:gap-x-8'>
           <div className='flex flex-col items-start'>
             <p className='inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
               <PiWaves className='text-sm text-crimsonRed' />{' '}
@@ -68,7 +68,7 @@ export default function NextDayCard({
             </p>
           </div>
 
-          <p className='text-xl md:text-2xl'>
+          <p className='text-lg md:text-2xl'>
             {cardData?.main?.temp.toFixed(1)} °
           </p>
         </div>

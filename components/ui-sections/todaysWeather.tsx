@@ -52,7 +52,7 @@ export default function TodaysWeather({ forecast }: TodaysProps) {
   return (
     <>
       <section className='h-auto w-full rounded-2xl'>
-        <div className='flex flex-wrap gap-2 md:gap-3'>
+        <div className='flex flex-wrap justify-center gap-2 md:justify-start md:gap-3'>
           {/* Humidity */}
           <div className='rounded-2xl border bg-white p-4 dark:bg-darkVoilet md:p-5'>
             <div className='flex items-center gap-x-2 md:gap-x-3'>

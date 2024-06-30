@@ -28,7 +28,7 @@ export default function Page() {
           {forecast === null ? (
             <Skeleton className='h-[300px] w-full' />
           ) : (
-            <section className='h-auto w-full rounded-2xl p-2 md:p-6 lg:py-10'>
+            <section className='h-auto w-full rounded-2xl py-4 md:p-6 lg:py-10'>
               {/* -----Tabs-Button----- */}
               <div className='flex flex-col gap-y-4 md:gap-y-6'>
                 <div className='flex items-center gap-x-4'>

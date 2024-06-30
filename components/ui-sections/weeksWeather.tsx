@@ -66,7 +66,7 @@ export default function WeeksWeather({ fiveday, unit }: WeeksWeatherProps) {
   return (
     <>
       <section className='h-auto w-full rounded-2xl'>
-        <div className='flex flex-wrap items-center gap-3 md:gap-4'>
+        <div className='flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:justify-start'>
           {/* ------Weather-Cards------ */}
           {nextFiveDaysForecast &&
             nextFiveDaysForecast.map((cardData) => {
