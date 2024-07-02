@@ -48,7 +48,7 @@ export function ComboboxDemo() {
             value={searchValue}
           />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>City found.</CommandEmpty>
             <CommandGroup>
               {geoCodedList.map((item, index) => (
                 <CommandItem

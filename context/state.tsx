@@ -42,6 +42,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
       );
       setForecast(res.data);
     } catch (error) {
+      alert('Error fetching forecast data, Refresh please.');
       console.error('Error fetching forecast data:', error);
     }
   };
@@ -83,7 +84,6 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   const fetchGeoCodedList = async (search: string) => {
     try {
       const res = await axios.get(`/api/geocoded?search=${search}`);
-      console.log(res.data);
 
       setGeoCodedList(res.data);
     } catch (error) {

@@ -19,7 +19,7 @@ export default function Page() {
 
   return (
     <>
-      <div className='mx-auto mt-3 flex h-auto w-full items-center justify-between sm:container'>
+      <div className='mx-auto mt-3 flex h-auto w-full flex-wrap items-center justify-center gap-4 sm:container sm:flex-nowrap sm:justify-between'>
         <ComboboxDemo />
         <SelectUnit />
       </div>
@@ -61,7 +61,7 @@ export default function Page() {
 
         {/* -----Right-Column----- */}
         <div className='h-auto w-full rounded-xl p-3 md:p-4 lg:col-span-2 lg:p-5 lg:pt-2 xl:col-span-2'>
-          <h2 className='mb-5 rounded-2xl border p-2 text-center text-xl font-bold text-slate-800 dark:text-white md:text-xl'>
+          <h2 className='mb-5 rounded-xl border bg-gray-200 p-2 text-center text-xl font-bold text-slate-800 dark:bg-darkVoilet dark:text-white md:text-xl'>
             Today&apos;s Highlight
           </h2>
 

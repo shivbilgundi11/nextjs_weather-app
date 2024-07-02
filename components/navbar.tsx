@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 
+import GetUserLoca from './getUserLocation';
+import LogoWithDate from './logoWithData';
 import { ThemeToggle } from './theme-toggler';
 import { Button } from './ui/button';
 
@@ -26,18 +28,13 @@ export default function Navbar() {
             </Link>
 
             {/* ---Site-Name-&-Date--- */}
-            <div className='flex flex-col'>
-              <h1 className='text-md font-semibold tracking-wide md:text-lg'>
-                Weather Forecast
-              </h1>
-              <p className='text-xs font-medium tracking-wide text-muted-foreground sm:text-sm'>
-                Saturday 26, December 2020
-              </p>
-            </div>
+            <LogoWithDate />
           </div>
 
           {/* <-----------SearchBar-ThemeToggle-GitHubButton-----------> */}
           <div className='flex h-full items-center justify-center gap-x-1 md:gap-x-2'>
+            <GetUserLoca />
+
             {/* -----Theme-Toggler----- */}
             <ThemeToggle />
 

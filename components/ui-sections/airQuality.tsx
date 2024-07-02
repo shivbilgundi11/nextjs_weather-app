@@ -42,28 +42,28 @@ export default function AirQuality({ airPollution }: AirPollutionProps) {
           <PiWind />
         </span>
 
-        <div className='flex items-center justify-between gap-3'>
+        <div className='flex items-center justify-center gap-4 md:gap-8'>
           <div className='flex flex-col gap-y-1'>
-            <span className='inline-flex items-center font-semibold'>
+            <span className='inline-flex items-center font-semibold dark:text-white'>
               PM2.5:{' '}
-              <p className='ml-1 font-medium'>
+              <p className='ml-1 text-sm font-medium dark:text-gray-600'>
                 {airPollution?.list[0]?.components?.pm2_5}
               </p>{' '}
-              <small className='ml-1'>
+              <small className='ml-1 dark:text-gray-600'>
                 μg/m<sup>3</sup>
               </small>
             </span>
-            <span className='inline-flex items-center font-semibold'>
+            <span className='inline-flex items-center font-semibold dark:text-white'>
               O3:{' '}
-              <p className='ml-1 text-sm font-medium'>
+              <p className='ml-1 text-sm font-medium dark:text-gray-600'>
                 {airPollution?.list[0]?.components?.o3}
               </p>{' '}
-              <small className='ml-1'>
+              <small className='ml-1 dark:text-gray-600'>
                 μg/m<sup>3</sup>
               </small>
             </span>
           </div>
-          <div className='h-[20px] w-[2px] border border-gray-600'></div>
+          <div className='h-[30px] w-[2px] border border-gray-600'></div>
           <div className='w-max rounded-xl bg-[#FFDE68] p-3 px-5 text-sm font-semibold tracking-wider text-black md:text-base'>
             <p>{getAQIDescription(aqi)}</p>
           </div>
