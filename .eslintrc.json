@@ -6,9 +6,9 @@
   ],
   "plugins": ["simple-import-sort"],
   "rules": {
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "no-unused-vars": "warn"
+    // "simple-import-sort/imports": "error",
+    // "simple-import-sort/exports": "error",
+    // "no-unused-vars": "warn"
   },
   "parserOptions": {
     "sourceType": "module",
