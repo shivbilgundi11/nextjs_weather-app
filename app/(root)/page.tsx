@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+import { ComboboxDemo } from '@/components/new-search';
 import { SelectUnit } from '@/components/select-unit';
 import { Skeleton } from '@/components/ui/skeleton';
 import AirQuality from '@/components/ui-sections/airQuality';
@@ -18,7 +19,8 @@ export default function Page() {
 
   return (
     <>
-      <div className='mx-auto mt-3 flex h-auto w-full items-center justify-end sm:container'>
+      <div className='mx-auto mt-3 flex h-auto w-full items-center justify-between sm:container'>
+        <ComboboxDemo />
         <SelectUnit />
       </div>
       <div className='mx-auto grid h-auto w-full grid-cols-1 gap-3 bg-grayShade p-3 sm:container dark:bg-inherit sm:p-4 md:grid-cols-1 md:gap-5 md:py-5 lg:grid-cols-5 xl:grid-cols-6'>

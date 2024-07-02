@@ -1,6 +1,7 @@
 'use client';
 
 import axios from 'axios';
+import { debounce } from 'lodash';
 import {
   ChangeEvent,
   createContext,
@@ -32,7 +33,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
   );
   const [fiveDayForecast, setFiveDayForecast] =
     useState<FiveDayForecast | null>(null);
-  const [activeCoords] = useState([12.97, 77.6]);
+  const [activeCoords, setActiveCoords] = useState([12.97, 77.6]);
 
   const fetchForecast = async (lat: number, lon: number, unit: string) => {
     try {
@@ -78,6 +79,32 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  //geocoded list
+  const fetchGeoCodedList = async (search: string) => {
+    try {
+      const res = await axios.get(`/api/geocoded?search=${search}`);
+      console.log(res.data);
+
+      setGeoCodedList(res.data);
+    } catch (error) {
+      console.log('Error fetching geocoded list: ');
+    }
+  };
+
+  // debounce function
+  useEffect(() => {
+    const debouncedFetch = debounce((search: string) => {
+      fetchGeoCodedList(search);
+    }, 500);
+
+    if (searchValue) {
+      debouncedFetch(searchValue);
+    }
+
+    // cleanup
+    return () => debouncedFetch.cancel();
+  }, [searchValue]);
+
   useEffect(() => {
     fetchForecast(activeCoords[0], activeCoords[1], unit);
     fetchAirPollution(activeCoords[0], activeCoords[1]);
@@ -95,6 +122,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
         geoCodedList,
         searchValue,
         handleInput,
+        setActiveCoords,
       }}
     >
       {children}

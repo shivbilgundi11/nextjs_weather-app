@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 
-import { SearchCommand } from './search-command';
 import { ThemeToggle } from './theme-toggler';
 import { Button } from './ui/button';
 
@@ -39,9 +38,6 @@ export default function Navbar() {
 
           {/* <-----------SearchBar-ThemeToggle-GitHubButton-----------> */}
           <div className='flex h-full items-center justify-center gap-x-1 md:gap-x-2'>
-            {/* -----Search-Modal----- */}
-            <SearchCommand />
-
             {/* -----Theme-Toggler----- */}
             <ThemeToggle />
 

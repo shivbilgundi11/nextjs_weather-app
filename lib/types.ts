@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 export interface WeatherDataType {
   coord: {
@@ -84,6 +84,7 @@ export interface WeatherContextType {
   searchValue: string;
   // eslint-disable-next-line no-unused-vars
   handleInput: (e: ChangeEvent<HTMLInputElement>) => void;
+  setActiveCoords: Dispatch<SetStateAction<number[]>>;
 }
 
 export interface SunDataProps {
