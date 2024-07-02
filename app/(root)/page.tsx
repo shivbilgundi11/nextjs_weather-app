@@ -61,7 +61,7 @@ export default function Page() {
 
         {/* -----Right-Column----- */}
         <div className='h-auto w-full rounded-xl p-3 md:p-4 lg:col-span-2 lg:p-5 lg:pt-2 xl:col-span-2'>
-          <h2 className='mb-5 rounded-xl border bg-gray-200 p-2 text-center text-xl font-bold text-slate-800 dark:bg-darkVoilet dark:text-white md:text-xl'>
+          <h2 className='mb-5 rounded-xl border bg-white p-2 text-center text-xl font-bold text-slate-800 dark:bg-darkVoilet dark:text-white md:text-xl'>
             Today&apos;s Highlight
           </h2>
 

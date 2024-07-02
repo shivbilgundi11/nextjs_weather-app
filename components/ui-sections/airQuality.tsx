@@ -34,7 +34,7 @@ export default function AirQuality({ airPollution }: AirPollutionProps) {
 
   return (
     <>
-      <div className='relative flex h-28 w-full flex-col justify-between overflow-hidden rounded-2xl border bg-gray-200 p-3 dark:bg-darkVoilet md:w-full'>
+      <div className='relative flex h-28 w-full flex-col justify-between overflow-hidden rounded-2xl border bg-white p-3 dark:bg-darkVoilet md:w-full'>
         <h3 className='text-center font-semibold lg:text-lg'>
           Air Quality Index
         </h3>

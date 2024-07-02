@@ -19,7 +19,7 @@ export default function WindSpeed({ windData, unit }: WindSpeedProps) {
   }
   return (
     <>
-      <div className='relative flex h-auto w-full flex-col gap-y-3 overflow-hidden rounded-2xl border bg-gray-200 p-3 dark:bg-darkVoilet md:w-full'>
+      <div className='relative flex h-auto w-full flex-col gap-y-3 overflow-hidden rounded-2xl border bg-white p-3 dark:bg-darkVoilet md:w-full'>
         <h3 className='mx-auto inline-flex items-center gap-x-2 font-semibold lg:text-lg'>
           <PiWind className='mr-1 text-2xl' />
           Wind
