@@ -43,7 +43,7 @@ export function ComboboxDemo() {
       <PopoverContent className='w-[200px] p-0'>
         <Command>
           <CommandInput
-            placeholder='Search framework...'
+            placeholder='Search City...'
             onChangeCapture={handleInput}
             value={searchValue}
           />
