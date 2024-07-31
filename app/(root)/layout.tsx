@@ -10,7 +10,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <main className='min-h-screen w-full bg-grayShade dark:bg-inherit'>
+      <main className='flex min-h-screen w-full flex-col justify-between bg-grayShade dark:bg-inherit'>
         <Navbar />
         {children}
 
@@ -31,7 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
             Weather data provided by OpenWeather{' '}
             <a href='https://openweathermap.org/' target='_blank'>
               <Image
-                src={'/assets/OpenWeather-Logo.png'}
+                src={'/assets/OpenWeather-logo.png'}
                 alt='OpenWeather-logo'
                 width={64}
                 height={64}
